@@ -1,5 +1,7 @@
 # Relax
 
+Truy cap trang demo chi tiet tai: [https://hoangan310.github.io/relax](https://hoangan310.github.io/relax)
+
 Bo suu tap game nho xinh cho be, duoc host bang GitHub Pages va khong can backend
 hay database.
 
