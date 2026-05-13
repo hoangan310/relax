@@ -1,0 +1,25 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="600" rx="40" fill="#FFF7FC"/>
+  <rect x="52" y="48" width="856" height="504" rx="34" fill="#F8F0FF"/>
+  <text x="480" y="118" text-anchor="middle" fill="#4F4671" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">
+    Lat the tim cap
+  </text>
+  <g>
+    <rect x="174" y="182" width="166" height="166" rx="26" fill="#FFFFFF" stroke="#E0D2FF" stroke-width="10"/>
+    <rect x="398" y="182" width="166" height="166" rx="26" fill="#FFD8E6"/>
+    <rect x="622" y="182" width="166" height="166" rx="26" fill="#FFFFFF" stroke="#E0D2FF" stroke-width="10"/>
+    <rect x="174" y="374" width="166" height="166" rx="26" fill="#D5F3DD"/>
+    <rect x="398" y="374" width="166" height="166" rx="26" fill="#FFFFFF" stroke="#E0D2FF" stroke-width="10"/>
+    <rect x="622" y="374" width="166" height="166" rx="26" fill="#D5F3DD"/>
+  </g>
+  <g fill="#4F4671" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">
+    <text x="481" y="280" text-anchor="middle">Hoa</text>
+    <text x="257" y="472" text-anchor="middle">Gau</text>
+    <text x="705" y="472" text-anchor="middle">Gau</text>
+  </g>
+  <g fill="#7A69B8" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="700">
+    <text x="257" y="287" text-anchor="middle">?</text>
+    <text x="705" y="287" text-anchor="middle">?</text>
+    <text x="481" y="479" text-anchor="middle">?</text>
+  </g>
+</svg>

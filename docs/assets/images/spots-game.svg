@@ -1,0 +1,18 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="600" rx="40" fill="#FFF7FC"/>
+  <rect x="52" y="48" width="856" height="504" rx="34" fill="#F8F0FF"/>
+  <text x="480" y="118" text-anchor="middle" fill="#4F4671" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">
+    Nho vi tri
+  </text>
+  <g>
+    <rect x="228" y="168" width="136" height="136" rx="24" fill="#FFFFFF" stroke="#E0D2FF" stroke-width="10"/>
+    <rect x="412" y="168" width="136" height="136" rx="24" fill="#FFD9E7"/>
+    <rect x="596" y="168" width="136" height="136" rx="24" fill="#FFFFFF" stroke="#E0D2FF" stroke-width="10"/>
+    <rect x="228" y="352" width="136" height="136" rx="24" fill="#FFFFFF" stroke="#E0D2FF" stroke-width="10"/>
+    <rect x="412" y="352" width="136" height="136" rx="24" fill="#FFFFFF" stroke="#E0D2FF" stroke-width="10"/>
+    <rect x="596" y="352" width="136" height="136" rx="24" fill="#FFD9E7"/>
+  </g>
+  <circle cx="480" cy="236" r="22" fill="#FF5A8F"/>
+  <circle cx="664" cy="420" r="22" fill="#FF5A8F"/>
+  <path d="M332 420H628" stroke="#7A69B8" stroke-width="14" stroke-linecap="round" stroke-dasharray="1 28"/>
+</svg>

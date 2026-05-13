@@ -28,6 +28,18 @@ docs/
   - Tu dong up bang lai sau khi het thoi gian
   - Click tung o de lat so
   - Co nut `Bat dau`, `Bat dau lai`, va `Back ve trang chu`
+- `Lap lai thu tu`
+  - Xem chuoi mau sang theo thu tu
+  - Cham lai dung thu tu vua thay
+  - Moi lan dung, chuoi se dai hon
+- `Lat the tim cap`
+  - Lat tung the de tim 2 the giong nhau
+  - Co 3 cap don gian de be nho vi tri
+  - Xao lai moi lan bat dau
+- `Nho vi tri`
+  - Xem cac o sang len trong choc lat
+  - Cham lai dung cac vi tri vua thay
+  - Moi lan dung, so o can nho se tang len
 
 ## Chay local
 
@@ -47,6 +59,9 @@ Sau do mo:
 ```bash
 cd /Users/bcm/projects/annguyen/relax
 node tests/memory-game.test.js
+node tests/sequence-game.test.js
+node tests/pairs-game.test.js
+node tests/spots-game.test.js
 ```
 
 ## Them game moi
@@ -61,6 +76,14 @@ node tests/memory-game.test.js
 
 4. Tao anh minh hoa moi trong `docs/assets/images/`.
 5. Cap nhat mang `games` trong `docs/script.js` de hien card tren trang chu.
+6. Neu game co logic random hoac setup, them test nho trong `tests/`.
+
+## Cac trang game hien tai
+
+- `docs/games/memory.html`
+- `docs/games/sequence.html`
+- `docs/games/pairs.html`
+- `docs/games/spots.html`
 
 ## Deploy len GitHub Pages
 

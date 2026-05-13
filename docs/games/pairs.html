@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lat The Tim Cap</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="game-page">
+        <div class="game-header">
+          <div class="game-nav">
+            <a class="button-link secondary" href="../index.html">Back ve trang chu</a>
+          </div>
+          <div>
+            <p class="eyebrow">Game Demo</p>
+            <h1>Lat the tim cap</h1>
+            <p>
+              Lat tung the de tim 2 the giong nhau. Nho vi tri the vua mo de
+              ghep cap nhanh hon.
+            </p>
+          </div>
+        </div>
+
+        <div class="game-layout">
+          <section class="panel">
+            <h2>Dieu khien</h2>
+            <div class="button-row">
+              <button id="pairs-start-button" class="action-button primary" type="button">
+                Bat dau
+              </button>
+              <button id="pairs-restart-button" class="action-button secondary" type="button">
+                Bat dau lai
+              </button>
+            </div>
+            <div id="pairs-status-box" class="status-box">
+              Bam "Bat dau" de xao cac the va tim tung cap giong nhau.
+            </div>
+          </section>
+
+          <section class="panel board-panel">
+            <div class="mini-stat-row">
+              <span>So cap da tim:</span>
+              <strong id="pairs-count">0/3</strong>
+            </div>
+            <div id="pairs-board" class="pair-board" aria-label="Bang lat the tim cap"></div>
+            <ol class="helper-list">
+              <li>Moi luot se xao lai vi tri cac the.</li>
+              <li>Mo 2 the de xem co giong nhau khong.</li>
+              <li>Tim du 3 cap la chien thang.</li>
+            </ol>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./pairs-core.js"></script>
+    <script src="./pairs-game.js"></script>
+  </body>
+</html>

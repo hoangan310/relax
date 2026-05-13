@@ -7,6 +7,30 @@ const games = [
     image: "./assets/images/memory-game.svg",
     cta: "Vao choi ngay",
   },
+  {
+    title: "Lap lai thu tu",
+    description:
+      "Nhin cac mau sang theo thu tu, roi cham lai dung tung buoc mot.",
+    href: "./games/sequence.html",
+    image: "./assets/images/sequence-game.svg",
+    cta: "Thu nho thu tu",
+  },
+  {
+    title: "Lat the tim cap",
+    description:
+      "Lat tung the de tim 2 the giong nhau va nho vi tri cua tung cap.",
+    href: "./games/pairs.html",
+    image: "./assets/images/pairs-game.svg",
+    cta: "Tim cac cap",
+  },
+  {
+    title: "Nho vi tri",
+    description:
+      "Nhin cac o sang len trong choc lat, roi cham lai dung cac vi tri vua thay.",
+    href: "./games/spots.html",
+    image: "./assets/images/spots-game.svg",
+    cta: "Thu nho vi tri",
+  },
 ];
 
 const gameList = document.querySelector("#game-list");

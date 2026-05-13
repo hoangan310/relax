@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lap Lai Thu Tu</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="game-page">
+        <div class="game-header">
+          <div class="game-nav">
+            <a class="button-link secondary" href="../index.html">Back ve trang chu</a>
+          </div>
+          <div>
+            <p class="eyebrow">Game Demo</p>
+            <h1>Lap lai thu tu</h1>
+            <p>
+              Nhin cac nut mau sang len theo thu tu. Khi den luot con, hay cham
+              lai dung thu tu do.
+            </p>
+          </div>
+        </div>
+
+        <div class="game-layout">
+          <section class="panel">
+            <h2>Dieu khien</h2>
+            <div class="button-row">
+              <button id="sequence-start-button" class="action-button primary" type="button">
+                Bat dau
+              </button>
+              <button id="sequence-replay-button" class="action-button secondary" type="button">
+                Xem lai
+              </button>
+              <button id="sequence-restart-button" class="action-button secondary" type="button">
+                Bat dau lai
+              </button>
+            </div>
+            <div id="sequence-status-box" class="status-box">
+              Bam "Bat dau" de xem chuoi mau dau tien.
+            </div>
+          </section>
+
+          <section class="panel board-panel">
+            <div class="mini-stat-row">
+              <span>Do dai chuoi:</span>
+              <strong id="sequence-length">3</strong>
+            </div>
+            <div id="sequence-board" class="sequence-board" aria-label="Bang lap lai thu tu"></div>
+            <ol class="helper-list">
+              <li>Nhin mau sang theo thu tu.</li>
+              <li>Cham lai dung thu tu vua thay.</li>
+              <li>Moi lan dung, chuoi se dai hon mot chut.</li>
+            </ol>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./sequence-core.js"></script>
+    <script src="./sequence-game.js"></script>
+  </body>
+</html>

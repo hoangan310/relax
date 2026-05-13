@@ -1,0 +1,21 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="600" rx="40" fill="#FFF7FC"/>
+  <rect x="52" y="48" width="856" height="504" rx="34" fill="#F8F0FF"/>
+  <text x="480" y="118" text-anchor="middle" fill="#4F4671" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">
+    Lap lai thu tu
+  </text>
+  <g>
+    <rect x="204" y="176" width="200" height="160" rx="30" fill="#FFD3E3"/>
+    <rect x="556" y="176" width="200" height="160" rx="30" fill="#DCCBFF"/>
+    <rect x="204" y="366" width="200" height="160" rx="30" fill="#FFF0A6"/>
+    <rect x="556" y="366" width="200" height="160" rx="30" fill="#CBEAFF"/>
+  </g>
+  <g fill="#4F4671" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">
+    <text x="304" y="270" text-anchor="middle">Hong</text>
+    <text x="656" y="270" text-anchor="middle">Tim</text>
+    <text x="304" y="460" text-anchor="middle">Vang</text>
+    <text x="656" y="460" text-anchor="middle">Xanh</text>
+  </g>
+  <path d="M428 256H532" stroke="#FF5A8F" stroke-width="18" stroke-linecap="round"/>
+  <path d="M480 230L532 256L480 282" stroke="#FF5A8F" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
