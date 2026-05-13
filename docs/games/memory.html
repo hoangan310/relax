@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyen Tri Nho 3x3</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="game-page">
+        <div class="game-header">
+          <div class="game-nav">
+            <a class="button-link secondary" href="../index.html">Back ve trang chu</a>
+          </div>
+          <div>
+            <p class="eyebrow">Game Demo</p>
+            <h1>Luyen tri nho 3x3</h1>
+            <p>
+              Bam bat dau de hien 9 so trong mot khoang thoi gian ngan. Khi cac
+              o bi up lai, hay click tung o de xem con nho dung vi tri khong.
+            </p>
+          </div>
+        </div>
+
+        <div class="game-layout">
+          <section class="panel">
+            <h2>Dieu khien</h2>
+            <div class="control-group">
+              <label for="preview-duration">Thoi gian hien so (giay)</label>
+              <input
+                id="preview-duration"
+                name="preview-duration"
+                type="number"
+                min="1"
+                step="1"
+                value="3"
+              />
+            </div>
+            <div class="button-row">
+              <button id="start-button" class="action-button primary" type="button">
+                Bat dau
+              </button>
+              <button id="restart-button" class="action-button secondary" type="button">
+                Bat dau lai
+              </button>
+            </div>
+            <div id="status-box" class="status-box">
+              Nhap thoi gian, sau do bam "Bat dau" de random 9 so.
+            </div>
+          </section>
+
+          <section class="panel board-panel">
+            <h2>Bang so</h2>
+            <div id="memory-board" class="board" aria-label="Bang luyen tri nho"></div>
+            <ol class="helper-list">
+              <li>Moi luot choi se random lai vi tri 9 so.</li>
+              <li>Sau so giay da chon, bang se bi up xuong.</li>
+              <li>Click vao tung o de lat ra so ben trong.</li>
+            </ol>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./memory-core.js"></script>
+    <script src="./memory-game.js"></script>
+  </body>
+</html>

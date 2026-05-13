@@ -1,0 +1,26 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="600" rx="40" fill="#FFF7FC"/>
+  <rect x="46" y="42" width="868" height="516" rx="32" fill="#F4ECFF"/>
+  <circle cx="180" cy="120" r="34" fill="#FF8CB2"/>
+  <circle cx="780" cy="120" r="26" fill="#8C84FF"/>
+  <rect x="122" y="160" width="716" height="320" rx="28" fill="white"/>
+  <g>
+    <rect x="196" y="204" width="150" height="150" rx="24" fill="#FFE2EE"/>
+    <rect x="404" y="204" width="150" height="150" rx="24" fill="#E8E0FF"/>
+    <rect x="612" y="204" width="150" height="150" rx="24" fill="#DFF3FF"/>
+    <rect x="196" y="378" width="150" height="150" rx="24" fill="#E8E0FF"/>
+    <rect x="404" y="378" width="150" height="150" rx="24" fill="#DFF3FF"/>
+    <rect x="612" y="378" width="150" height="150" rx="24" fill="#FFE2EE"/>
+  </g>
+  <g fill="#4F4671" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700">
+    <text x="250" y="298">3</text>
+    <text x="458" y="298">7</text>
+    <text x="666" y="298">1</text>
+    <text x="250" y="472">9</text>
+    <text x="458" y="472">4</text>
+    <text x="666" y="472">6</text>
+  </g>
+  <text x="480" y="108" text-anchor="middle" fill="#4F4671" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700">
+    Luyen tri nho 3x3
+  </text>
+</svg>
