@@ -31,6 +31,14 @@ const games = [
     image: "./assets/images/spots-game.svg",
     cta: "Thu nho vi tri",
   },
+  {
+    title: "Tim cap trai cay",
+    description:
+      "Dung bo anh trai cay that de lat the va tim cac cap hinh giong nhau theo 3 muc do kho.",
+    href: "./games/fruit-pairs.html",
+    image: "./assets/images/fruit-collection.png",
+    cta: "Tim cap hinh",
+  },
 ];
 
 const gameList = document.querySelector("#game-list");
