@@ -4,41 +4,41 @@
   var DIFFICULTIES = {
     easy: {
       id: "easy",
-      label: "De",
+      label: "Easy",
       themeClass: "difficulty-easy",
       pairCount: 5,
     },
     medium: {
       id: "medium",
-      label: "Trung binh",
+      label: "Medium",
       themeClass: "difficulty-medium",
       pairCount: 10,
     },
     hard: {
       id: "hard",
-      label: "Kho",
+      label: "Hard",
       themeClass: "difficulty-hard",
       pairCount: 15,
     },
   };
 
   var FRUIT_LIBRARY = [
-    { id: "fruit-0", label: "Chanh", spriteX: 0, spriteY: 120 },
-    { id: "fruit-1", label: "Buoi hong", spriteX: 256, spriteY: 120 },
-    { id: "fruit-2", label: "Sau rieng", spriteX: 512, spriteY: 120 },
-    { id: "fruit-3", label: "Sung", spriteX: 768, spriteY: 120 },
-    { id: "fruit-4", label: "Quyt", spriteX: 0, spriteY: 305 },
-    { id: "fruit-5", label: "Kiwi", spriteX: 256, spriteY: 305 },
-    { id: "fruit-6", label: "Cam", spriteX: 512, spriteY: 305 },
-    { id: "fruit-7", label: "Xoai", spriteX: 768, spriteY: 305 },
-    { id: "fruit-8", label: "Vai", spriteX: 0, spriteY: 488 },
-    { id: "fruit-9", label: "Oi xanh", spriteX: 256, spriteY: 488 },
-    { id: "fruit-10", label: "Chanh xanh", spriteX: 512, spriteY: 488 },
-    { id: "fruit-11", label: "Cam do", spriteX: 768, spriteY: 488 },
-    { id: "fruit-12", label: "Chuoi", spriteX: 0, spriteY: 670 },
-    { id: "fruit-13", label: "Le", spriteX: 256, spriteY: 670 },
-    { id: "fruit-14", label: "Dao", spriteX: 512, spriteY: 670 },
-    { id: "fruit-15", label: "Tao xanh", spriteX: 768, spriteY: 670 },
+    { id: "fruit-0", label: "Lemon", imagePath: "../assets/images/fruits/lemon.png" },
+    { id: "fruit-1", label: "Grapefruit", imagePath: "../assets/images/fruits/grapefruit.png" },
+    { id: "fruit-2", label: "Durian", imagePath: "../assets/images/fruits/durian.png" },
+    { id: "fruit-3", label: "Fig", imagePath: "../assets/images/fruits/fig.png" },
+    { id: "fruit-4", label: "Tangerine", imagePath: "../assets/images/fruits/tangerine.png" },
+    { id: "fruit-5", label: "Kiwi", imagePath: "../assets/images/fruits/kiwi.png" },
+    { id: "fruit-6", label: "Orange", imagePath: "../assets/images/fruits/orange.png" },
+    { id: "fruit-7", label: "Mango", imagePath: "../assets/images/fruits/mango.png" },
+    { id: "fruit-8", label: "Lychee", imagePath: "../assets/images/fruits/lychee.png" },
+    { id: "fruit-9", label: "Guava", imagePath: "../assets/images/fruits/guava.png" },
+    { id: "fruit-10", label: "Lime", imagePath: "../assets/images/fruits/lime.png" },
+    { id: "fruit-11", label: "Blood Orange", imagePath: "../assets/images/fruits/blood-orange.png" },
+    { id: "fruit-12", label: "Banana", imagePath: "../assets/images/fruits/banana.png" },
+    { id: "fruit-13", label: "Pear", imagePath: "../assets/images/fruits/pear.png" },
+    { id: "fruit-14", label: "Peach", imagePath: "../assets/images/fruits/peach.png" },
+    { id: "fruit-15", label: "Green Apple", imagePath: "../assets/images/fruits/green-apple.png" },
   ];
 
   function getDifficultyConfig(level) {
@@ -53,15 +53,13 @@
         id: fruit.id + "-a",
         fruitId: fruit.id,
         label: fruit.label,
-        spriteX: fruit.spriteX,
-        spriteY: fruit.spriteY,
+        imagePath: fruit.imagePath,
       });
       result.push({
         id: fruit.id + "-b",
         fruitId: fruit.id,
         label: fruit.label,
-        spriteX: fruit.spriteX,
-        spriteY: fruit.spriteY,
+        imagePath: fruit.imagePath,
       });
       return result;
     }, []);

@@ -71,11 +71,11 @@
           (isDisabled ? " disabled" : "") +
           ">" +
           '<span class="fruit-card-front">' +
-          '<span class="fruit-sprite" style="--fruit-x:' +
-          card.spriteX +
-          "px; --fruit-y:" +
-          card.spriteY +
-          'px;" aria-hidden="true"></span>' +
+          '<img class="fruit-image" src="' +
+          card.imagePath +
+          '" alt="' +
+          card.label +
+          '" />' +
           '<span class="fruit-card-label">' +
           card.label +
           "</span>" +
@@ -109,11 +109,10 @@
     updateDifficultyButtons();
     renderBoard();
     setStatus(
-      "Muc " +
-        difficulty.label.toLowerCase() +
-        ": hay lat 2 the de tim du " +
+      difficulty.label +
+        " mode: find all " +
         difficulty.pairCount +
-        " cap hinh giong nhau."
+        " matching fruit pairs."
     );
   }
 
@@ -130,17 +129,17 @@
     if (state.phase === "idle") {
       renderBoard();
       setStatus(
-        "Da chon muc " +
+        "Selected " +
           getSelectedDifficulty().label.toLowerCase() +
-          '. Bam "Bat dau" de choi.'
+          ' mode. Press "Start" to play.'
       );
       return;
     }
 
     setStatus(
-      "Da doi sang muc " +
+      "Switched to " +
         getSelectedDifficulty().label.toLowerCase() +
-        '. Bam "Bat dau lai" de xao bo the moi.'
+        ' mode. Press "Restart" to shuffle a new board.'
     );
   }
 
@@ -167,7 +166,7 @@
     renderBoard();
 
     if (state.flippedIds.length < 2) {
-      setStatus("Mo them 1 the nua de tim cap hinh giong nhau.");
+      setStatus("Flip one more card to look for a matching fruit.");
       return;
     }
 
@@ -181,21 +180,21 @@
 
       if (state.matchedIds.length === state.deck.length) {
         state.phase = "complete";
-        setStatus("Chien thang roi. Con da tim het tat ca cac cap trai cay.");
+        setStatus("You win! You found every fruit pair.");
         return;
       }
 
-      setStatus("Dung roi. Con vua tim duoc mot cap hinh giong nhau.");
+      setStatus("Nice! You found a matching fruit pair.");
       return;
     }
 
     state.busy = true;
-    setStatus("Chua trung cap roi. Nhin ky de nho vi tri cho lan sau nhe.");
+    setStatus("Not a match. Try to remember those fruit positions.");
     hideTimerId = window.setTimeout(function () {
       state.flippedIds = [];
       state.busy = false;
       renderBoard();
-      setStatus("Thu lai nhe. Hay lat 2 the tiep theo.");
+      setStatus("Try again and flip the next two cards.");
     }, 900);
   }
 

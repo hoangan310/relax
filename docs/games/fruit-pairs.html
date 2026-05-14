@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tim Cap Hinh Trai Cay</title>
+    <title>Fruit Match</title>
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
@@ -11,76 +11,76 @@
       <section class="game-page">
         <div class="game-header">
           <div class="game-nav">
-            <a class="button-link secondary" href="../index.html">Back ve trang chu</a>
+            <a class="button-link secondary" href="../index.html">Back to home</a>
           </div>
           <div>
-            <p class="eyebrow">Game Moi</p>
-            <h1>Tim cap hinh trai cay</h1>
+            <p class="eyebrow">New Game</p>
+            <h1>Fruit match</h1>
             <p>
-              Chon do kho truoc khi choi. Lat 2 the moi luot de tim dung cac cap
-              hinh giong nhau. Tim het cap la chien thang.
+              Pick a difficulty before playing. Flip two cards each turn and
+              find all matching fruit pairs to win.
             </p>
           </div>
         </div>
 
         <div class="game-layout">
           <section class="panel">
-            <h2>Chon do kho</h2>
-            <div id="fruit-difficulty-group" class="difficulty-group" role="group" aria-label="Chon do kho">
+            <h2>Choose difficulty</h2>
+            <div id="fruit-difficulty-group" class="difficulty-group" role="group" aria-label="Choose difficulty">
               <button
                 class="difficulty-button difficulty-easy active"
                 type="button"
                 data-level="easy"
               >
-                De
-                <span>5 cap</span>
+                Easy
+                <span>5 pairs</span>
               </button>
               <button
                 class="difficulty-button difficulty-medium"
                 type="button"
                 data-level="medium"
               >
-                Trung binh
-                <span>10 cap</span>
+                Medium
+                <span>10 pairs</span>
               </button>
               <button
                 class="difficulty-button difficulty-hard"
                 type="button"
                 data-level="hard"
               >
-                Kho
-                <span>15 cap</span>
+                Hard
+                <span>15 pairs</span>
               </button>
             </div>
 
             <div class="button-row">
               <button id="fruit-start-button" class="action-button primary" type="button">
-                Bat dau
+                Start
               </button>
               <button id="fruit-restart-button" class="action-button secondary" type="button">
-                Bat dau lai
+                Restart
               </button>
             </div>
 
             <div id="fruit-status-box" class="status-box">
-              Chon do kho, sau do bam "Bat dau" de xao cac the trai cay.
+              Choose a difficulty, then press "Start" to shuffle the fruit cards.
             </div>
           </section>
 
           <section class="panel board-panel">
             <div class="mini-stat-row">
-              <span>Muc dang choi:</span>
-              <strong id="fruit-mode-label">De</strong>
+              <span>Current mode:</span>
+              <strong id="fruit-mode-label">Easy</strong>
             </div>
             <div class="mini-stat-row">
-              <span>So cap da tim:</span>
+              <span>Pairs found:</span>
               <strong id="fruit-pairs-count">0/5</strong>
             </div>
-            <div id="fruit-board" class="fruit-board" aria-label="Bang tim cap hinh trai cay"></div>
+            <div id="fruit-board" class="fruit-board" aria-label="Fruit matching board"></div>
             <ol class="helper-list">
-              <li>Mau xanh la: tim 5 cap.</li>
-              <li>Mau vang: tim 10 cap.</li>
-              <li>Mau do: tim 15 cap.</li>
+              <li>Green: find 5 pairs.</li>
+              <li>Yellow: find 10 pairs.</li>
+              <li>Red: find 15 pairs.</li>
             </ol>
           </section>
         </div>

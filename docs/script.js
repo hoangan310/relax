@@ -32,12 +32,12 @@ const games = [
     cta: "Thu nho vi tri",
   },
   {
-    title: "Tim cap trai cay",
+    title: "Fruit match",
     description:
-      "Dung bo anh trai cay that de lat the va tim cac cap hinh giong nhau theo 3 muc do kho.",
+      "Flip fruit cards and match pairs in 3 difficulty levels: 5, 10, or 15 pairs.",
     href: "./games/fruit-pairs.html",
     image: "./assets/images/fruit-collection.png",
-    cta: "Tim cap hinh",
+    cta: "Match fruits",
   },
 ];
 

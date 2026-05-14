@@ -42,6 +42,10 @@ docs/
   - Xem cac o sang len trong choc lat
   - Cham lai dung cac vi tri vua thay
   - Moi lan dung, so o can nho se tang len
+- `Tim cap trai cay`
+  - Dung bo anh trai cay that de choi game tim cap hinh
+  - Chon 3 muc do kho: `De` 5 cap, `Trung binh` 10 cap, `Kho` 15 cap
+  - Tim het cac cap la chien thang
 
 ## Chay local
 
@@ -64,6 +68,7 @@ node tests/memory-game.test.js
 node tests/sequence-game.test.js
 node tests/pairs-game.test.js
 node tests/spots-game.test.js
+node tests/fruit-pairs.test.js
 ```
 
 ## Them game moi
@@ -86,6 +91,7 @@ node tests/spots-game.test.js
 - `docs/games/sequence.html`
 - `docs/games/pairs.html`
 - `docs/games/spots.html`
+- `docs/games/fruit-pairs.html`
 
 ## Deploy len GitHub Pages
 

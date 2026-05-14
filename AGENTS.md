@@ -17,6 +17,7 @@
 - `docs/games/`: one page per game
 - `docs/assets/images/`: game card art
 - `tests/memory-game.test.js`: memory-game logic checks
+- `tests/fruit-pairs.test.js`: fruit matching difficulty and deck checks
 - `README.md`: local run and GitHub Pages notes
 
 ## Package Manager
@@ -29,10 +30,13 @@
 | Serve locally | `python3 -m http.server 8000` |
 | Open site | `http://localhost:8000/docs/` |
 | Test memory logic | `node tests/memory-game.test.js` |
+| Test fruit pairs | `node tests/fruit-pairs.test.js` |
 
 ## Current Game
 - `docs/games/memory.html`: 3x3 memory game
 - Flow: enter seconds -> start -> show shuffled `1-9` -> hide -> click tiles to reveal -> restart
+- `docs/games/fruit-pairs.html`: image matching game using `docs/assets/images/fruit-collection.png`
+- Flow: choose `easy`/`medium`/`hard` -> start -> flip fruit cards -> match all pairs to win
 
 ## Add A New Game
 - Add page: `docs/games/<slug>.html`

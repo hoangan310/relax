@@ -488,15 +488,12 @@ input {
   text-align: center;
 }
 
-.fruit-sprite {
+.fruit-image {
   display: block;
-  width: min(100%, 74px);
-  height: min(100%, 58px);
-  border-radius: 14px;
-  background-image: url("./assets/images/fruit-collection.png");
-  background-repeat: no-repeat;
-  background-size: 1024px 853px;
-  background-position: calc(var(--fruit-x) * -1) calc(var(--fruit-y) * -1);
+  width: min(100%, 94px);
+  height: 72px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .spots-board {

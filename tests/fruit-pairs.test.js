@@ -19,7 +19,7 @@ function test(name, fn) {
 test("getDifficultyConfig returns the easy mode settings", () => {
   assert.deepStrictEqual(getDifficultyConfig("easy"), {
     id: "easy",
-    label: "De",
+    label: "Easy",
     themeClass: "difficulty-easy",
     pairCount: 5,
   });
@@ -28,7 +28,7 @@ test("getDifficultyConfig returns the easy mode settings", () => {
 test("getDifficultyConfig returns the medium mode settings", () => {
   assert.deepStrictEqual(getDifficultyConfig("medium"), {
     id: "medium",
-    label: "Trung binh",
+    label: "Medium",
     themeClass: "difficulty-medium",
     pairCount: 10,
   });
@@ -37,7 +37,7 @@ test("getDifficultyConfig returns the medium mode settings", () => {
 test("getDifficultyConfig returns the hard mode settings", () => {
   assert.deepStrictEqual(getDifficultyConfig("hard"), {
     id: "hard",
-    label: "Kho",
+    label: "Hard",
     themeClass: "difficulty-hard",
     pairCount: 15,
   });
