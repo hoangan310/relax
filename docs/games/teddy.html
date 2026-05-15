@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tim Gau Bong</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="teddy-room-body">
+    <main class="page-shell">
+      <section class="game-page teddy-room-page">
+        <div class="game-header">
+          <div class="game-nav">
+            <a class="button-link secondary" href="../index.html">Back ve trang chu</a>
+          </div>
+          <div>
+            <p class="eyebrow">Game Demo</p>
+            <h1>Tim gau bong</h1>
+            <p>
+              Gau bong dang o trong mot hop qua. Hay nhin ky, doi cac hop doi cho,
+              roi cham dung hop co gau nhe.
+            </p>
+          </div>
+        </div>
+
+        <div class="game-layout">
+          <section class="panel">
+            <h2>Chon do kho</h2>
+            <div id="teddy-difficulty-group" class="difficulty-group" role="group" aria-label="Chon do kho">
+              <button
+                class="difficulty-button difficulty-easy active"
+                type="button"
+                data-level="easy"
+              >
+                De
+                <span>3 hop, shuffle cham</span>
+              </button>
+              <button
+                class="difficulty-button difficulty-medium"
+                type="button"
+                data-level="medium"
+              >
+                Trung binh
+                <span>4 hop, shuffle vua</span>
+              </button>
+              <button
+                class="difficulty-button difficulty-hard"
+                type="button"
+                data-level="hard"
+              >
+                Kho
+                <span>5 hop, shuffle nhanh</span>
+              </button>
+            </div>
+
+            <div class="button-row">
+              <button id="teddy-start-button" class="action-button primary" type="button">
+                Bat dau
+              </button>
+              <button id="teddy-restart-button" class="action-button secondary" type="button">
+                Bat dau lai
+              </button>
+            </div>
+
+            <div id="teddy-status-box" class="status-box teddy-status">
+              Chon do kho, roi bam "Bat dau" de xem gau bong o hop nao.
+            </div>
+          </section>
+
+          <section class="panel board-panel teddy-board-panel">
+            <div class="mini-stat-row">
+              <span>Che do:</span>
+              <strong id="teddy-mode-label">De</strong>
+            </div>
+            <div id="teddy-board" class="teddy-board" aria-label="Phong do choi hop qua"></div>
+            <ol class="helper-list">
+              <li>Nhin gau bong trong hop.</li>
+              <li>Doi cac hop doi cho.</li>
+              <li>Cham hop co gau bong.</li>
+            </ol>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./teddy-core.js"></script>
+    <script src="./teddy-game.js"></script>
+  </body>
+</html>

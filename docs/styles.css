@@ -543,6 +543,123 @@ input {
   background: #4b84ff;
 }
 
+.teddy-room-body {
+  background:
+    radial-gradient(circle at top left, rgba(255, 198, 226, 0.55), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 214, 236, 0.45), transparent 24%),
+    linear-gradient(180deg, #fff4fa 0%, #ffe8f3 100%);
+}
+
+.teddy-room-page {
+  background: linear-gradient(180deg, rgba(255, 244, 250, 0.96) 0%, rgba(255, 232, 243, 0.96) 100%);
+}
+
+.teddy-board-panel {
+  background: linear-gradient(180deg, #fff8fc 0%, #ffeef7 100%);
+  border-color: #f3c4dd;
+}
+
+.teddy-status {
+  background: #fff7fb;
+  border-color: #f2c0da;
+}
+
+.teddy-board {
+  display: grid;
+  grid-template-columns: repeat(var(--teddy-columns, 3), minmax(96px, 1fr));
+  gap: 16px;
+  align-items: end;
+}
+
+.teddy-box {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  min-height: 148px;
+  padding: 14px 12px 12px;
+  color: #6b3f63;
+  background: linear-gradient(180deg, #fff8fc 0%, #ffe3f1 100%);
+  border: 4px solid #f0a6cb;
+  border-radius: 24px 24px 18px 18px;
+  box-shadow: 0 14px 24px rgba(214, 98, 150, 0.16);
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.teddy-box:hover:not(:disabled) {
+  transform: translateY(-3px);
+}
+
+.teddy-box:disabled {
+  cursor: default;
+}
+
+.teddy-box-lid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 34px;
+  border-radius: 20px 20px 8px 8px;
+  background: linear-gradient(180deg, #ffbad8 0%, #ff8fc0 100%);
+}
+
+.teddy-box-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 92px;
+  margin-top: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.teddy-icon {
+  font-size: clamp(2.4rem, 8vw, 3.4rem);
+  line-height: 1;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.teddy-box.show-teddy .teddy-icon,
+.teddy-box.reveal-teddy .teddy-icon,
+.teddy-box.correct .teddy-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.teddy-box.closed .teddy-box-content {
+  background: linear-gradient(180deg, #fff 0%, #ffe8f3 100%);
+}
+
+.teddy-box.closed .teddy-icon {
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+.teddy-box.shuffle-highlight {
+  border-color: #ff5a9d;
+  box-shadow: 0 0 0 4px rgba(255, 90, 157, 0.18);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.teddy-box.correct,
+.teddy-box.reveal-teddy {
+  border-color: #ff5a9d;
+  background: linear-gradient(180deg, #fff4fa 0%, #ffd4e8 100%);
+}
+
+.teddy-box-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
 @media (max-width: 820px) {
   .game-layout {
     grid-template-columns: 1fr;

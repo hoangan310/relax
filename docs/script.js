@@ -39,6 +39,14 @@ const games = [
     image: "./assets/images/fruit-collection.png",
     cta: "Match fruits",
   },
+  {
+    title: "Tim gau bong",
+    description:
+      "Nhin gau bong trong hop qua, doi cac hop doi cho, roi cham dung hop co gau.",
+    href: "./games/teddy.html",
+    image: "./assets/images/teddy-game.svg",
+    cta: "Tim gau bong",
+  },
 ];
 
 const gameList = document.querySelector("#game-list");

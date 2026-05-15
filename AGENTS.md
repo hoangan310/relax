@@ -18,6 +18,7 @@
 - `docs/assets/images/`: game card art
 - `tests/memory-game.test.js`: memory-game logic checks
 - `tests/fruit-pairs.test.js`: fruit matching difficulty and deck checks
+- `tests/teddy-game.test.js`: teddy box shuffle level and guess checks
 - `README.md`: local run and GitHub Pages notes
 
 ## Package Manager
@@ -31,12 +32,15 @@
 | Open site | `http://localhost:8000/docs/` |
 | Test memory logic | `node tests/memory-game.test.js` |
 | Test fruit pairs | `node tests/fruit-pairs.test.js` |
+| Test find teddy | `node tests/teddy-game.test.js` |
 
 ## Current Game
 - `docs/games/memory.html`: 3x3 memory game
 - Flow: enter seconds -> start -> show shuffled `1-9` -> hide -> click tiles to reveal -> restart
 - `docs/games/fruit-pairs.html`: image matching game using `docs/assets/images/fruit-collection.png`
 - Flow: choose `easy`/`medium`/`hard` -> start -> flip fruit cards -> match all pairs to win
+- `docs/games/teddy.html`: find-the-teddy shell game in a pink toy room
+- Flow: choose `easy`/`medium`/`hard` -> preview teddy in one box -> shuffle -> click the correct box
 
 ## Add A New Game
 - Add page: `docs/games/<slug>.html`
