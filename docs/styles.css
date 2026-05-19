@@ -263,6 +263,29 @@ input {
   cursor: default;
 }
 
+.tile.preview {
+  color: #493f69;
+  background: #fff;
+}
+
+.tile.correct {
+  color: #1f5f35;
+  background: linear-gradient(180deg, #e8fff0 0%, #b8f0c8 100%);
+  border-color: #7ed99a;
+  box-shadow: 0 10px 18px rgba(56, 142, 88, 0.16);
+}
+
+.tile.wrong {
+  color: #7a1f2d;
+  background: linear-gradient(180deg, #ffe8ec 0%, #ffb8c4 100%);
+  border-color: #ff8aa0;
+  box-shadow: 0 10px 18px rgba(180, 56, 82, 0.18);
+}
+
+.order-memory-board .tile.hidden {
+  color: transparent;
+}
+
 .helper-list {
   margin: 0;
   padding-left: 18px;

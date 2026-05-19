@@ -8,6 +8,14 @@ const games = [
     cta: "Vao choi ngay",
   },
   {
+    title: "Lat so theo thu tu",
+    description:
+      "Nho vi tri 9 so, roi lat dung thu tu tu 1 den 9. Lat sai thi thua, lat du 9 thi thang.",
+    href: "./games/order-memory.html",
+    image: "./assets/images/order-memory.svg",
+    cta: "Lat tu 1 den 9",
+  },
+  {
     title: "Lap lai thu tu",
     description:
       "Nhin cac mau sang theo thu tu, roi cham lai dung tung buoc mot.",

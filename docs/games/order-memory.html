@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lat So Theo Thu Tu</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="game-page">
+        <div class="game-header">
+          <div class="game-nav">
+            <a class="button-link secondary" href="../index.html">Back ve trang chu</a>
+          </div>
+          <div>
+            <p class="eyebrow">Game Demo</p>
+            <h1>Lat so theo thu tu</h1>
+            <p>
+              Nhin 9 so tu 1 den 9 duoc xao vi tri, roi lat dung thu tu tu 1 den 9.
+              Lat sai mot o thi thua cuoc.
+            </p>
+          </div>
+        </div>
+
+        <div class="game-layout">
+          <section class="panel">
+            <h2>Dieu khien</h2>
+            <div class="control-group">
+              <label for="order-memory-duration">Thoi gian hien so (giay)</label>
+              <input
+                id="order-memory-duration"
+                name="order-memory-duration"
+                type="number"
+                min="1"
+                step="1"
+                value="3"
+              />
+            </div>
+            <div class="button-row">
+              <button id="order-memory-start" class="action-button primary" type="button">
+                Bat dau
+              </button>
+              <button id="order-memory-restart" class="action-button secondary" type="button">
+                Bat dau lai
+              </button>
+            </div>
+            <div id="order-memory-status" class="status-box">
+              Nhap thoi gian, roi bam "Bat dau" de xem 9 so va lat tu 1 den 9.
+            </div>
+          </section>
+
+          <section class="panel board-panel">
+            <div class="mini-stat-row">
+              <span>So can lat tiep theo:</span>
+              <strong id="order-memory-expected">1</strong>
+            </div>
+            <div
+              id="order-memory-board"
+              class="board order-memory-board"
+              aria-label="Bang lat so theo thu tu"
+            ></div>
+            <ol class="helper-list">
+              <li>Nhin ky vi tri cac so khi bang dang mo.</li>
+              <li>Sau do lat so 1, roi 2, 3... den 9.</li>
+              <li>Lat dung: o mau xanh. Lat sai: o mau do va thua cuoc.</li>
+            </ol>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./order-memory-core.js"></script>
+    <script src="./order-memory-game.js"></script>
+  </body>
+</html>
