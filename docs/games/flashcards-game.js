@@ -11,6 +11,8 @@
     cards: [],
     cardIndex: 0,
     isPlayingAudio: false,
+    isQuizMode: false,
+    wordRevealed: false,
   };
 
   function setStatus(message) {
@@ -38,7 +40,7 @@
       "ended",
       function () {
         state.isPlayingAudio = false;
-        if (state.phase === "play") {
+        if (state.phase === "play" || state.phase === "quiz") {
           renderPlayScreen();
         }
       },
@@ -50,7 +52,7 @@
       function () {
         state.isPlayingAudio = false;
         setStatus("Khong tai duoc am thanh cho tu \"" + card.word + "\".");
-        if (state.phase === "play") {
+        if (state.phase === "play" || state.phase === "quiz") {
           renderPlayScreen();
         }
       },
@@ -75,6 +77,13 @@
     screenElement.innerHTML =
       '<section class="panel">' +
       '<h2>Chon chu de</h2>' +
+      '<button class="flashcard-quiz-button" type="button" data-action="start-quiz">' +
+      '<span class="flashcard-topic-emoji" aria-hidden="true">🎲</span>' +
+      "<strong>Thi doi ngau nhien</strong>" +
+      "<span>Tat ca chu de · " +
+      state.entries.length +
+      " the</span>" +
+      "</button>" +
       '<div class="flashcard-topic-grid">' +
       state.topics
         .map(function (topic) {
@@ -104,7 +113,7 @@
       "</div>" +
       "</section>";
 
-    setStatus("Chon mot chu de de bat dau.");
+    setStatus("Chon chu de, hoac bam Thi doi ngau nhien de random tat ca the.");
   }
 
   function renderDecksScreen() {
@@ -152,38 +161,58 @@
     setStatus("Chon mot bo the trong chu de " + topic.labelVi + ".");
   }
 
+  function getCurrentCard() {
+    if (state.isQuizMode) {
+      return window.FlashcardsCore.getCardAt(state.entries, state.cardIndex);
+    }
+
+    return window.FlashcardsCore.getCardAt(state.cards, state.cardIndex);
+  }
+
   function renderPlayScreen() {
     var topic = state.selectedTopic;
     var deck = state.selectedDeck;
-    var card = window.FlashcardsCore.getCardAt(state.cards, state.cardIndex);
+    var card = getCurrentCard();
     var imageUrl = window.FlashcardsCore.resolveAssetPath(card.image);
-    var canNext = window.FlashcardsCore.canGoNext(
-      state.cardIndex,
-      state.cards.length
-    );
-    var canPrev = window.FlashcardsCore.canGoPrev(state.cardIndex);
+    var canNext = state.isQuizMode
+      ? true
+      : window.FlashcardsCore.canGoNext(state.cardIndex, state.cards.length);
+    var canPrev =
+      !state.isQuizMode && window.FlashcardsCore.canGoPrev(state.cardIndex);
+    var backAction = state.isQuizMode ? "back-topics" : "back-decks";
+    var backLabel = state.isQuizMode ? "Quay lai chu de" : "Quay lai bo the";
+    var progressText = state.isQuizMode
+      ? "Ngau nhien"
+      : String(state.cardIndex + 1) + " / " + String(state.cards.length);
+    var wordLabel = state.isQuizMode && !state.wordRevealed ? "???" : card.word;
+    var imageAlt = state.isQuizMode && !state.wordRevealed ? "Doan tu nay" : card.word;
+    var nextLabel = state.isQuizMode ? "The tiep ngau nhien" : "Tiep theo";
 
-    state.phase = "play";
+    state.phase = state.isQuizMode ? "quiz" : "play";
     showScreen();
 
     screenElement.innerHTML =
-      '<section class="panel board-panel flashcard-player-panel">' +
+      '<section class="panel board-panel flashcard-player-panel' +
+      (state.isQuizMode ? " flashcard-quiz-panel" : "") +
+      '">' +
       '<div class="flashcard-screen-header">' +
       "<h2>" +
       topic.emoji +
       " " +
       deck.label +
       "</h2>" +
-      '<button class="action-button secondary flashcard-back-button" type="button" data-action="back-decks">' +
-      "Quay lai bo the" +
+      '<button class="action-button secondary flashcard-back-button" type="button" data-action="' +
+      backAction +
+      '">' +
+      backLabel +
       "</button>" +
       "</div>" +
       '<div class="mini-stat-row">' +
-      "<span>Tien do:</span>" +
+      "<span>" +
+      (state.isQuizMode ? "Che do:" : "Tien do:") +
+      "</span>" +
       '<strong id="flashcard-progress">' +
-      (state.cardIndex + 1) +
-      " / " +
-      state.cards.length +
+      progressText +
       "</strong>" +
       "</div>" +
       '<div class="flashcard-stage' +
@@ -195,15 +224,21 @@
       '<img class="flashcard-image" src="' +
       imageUrl +
       '" alt="' +
-      card.word +
+      imageAlt +
       '" />' +
       "</button>" +
-      '<p class="flashcard-word">' +
-      card.word +
+      '<p class="flashcard-word' +
+      (state.isQuizMode && !state.wordRevealed ? " flashcard-word-hidden" : "") +
+      '">' +
+      wordLabel +
       "</p>" +
-      '<button class="action-button secondary flashcard-speak-button" type="button" data-action="play-audio">' +
-      "Nghe lai" +
-      "</button>" +
+      (state.isQuizMode && !state.wordRevealed
+        ? '<button class="action-button secondary flashcard-speak-button" type="button" data-action="reveal-word">' +
+          "Hien dap an" +
+          "</button>"
+        : '<button class="action-button secondary flashcard-speak-button" type="button" data-action="play-audio">' +
+          "Nghe lai" +
+          "</button>") +
       "</div>" +
       '<div class="button-row flashcard-nav-row">' +
       '<button class="action-button secondary" type="button" data-action="prev"' +
@@ -211,17 +246,57 @@
       ">Truoc</button>" +
       '<button class="action-button primary" type="button" data-action="next"' +
       (canNext ? "" : " disabled") +
-      ">Tiep theo</button>" +
+      ">" +
+      nextLabel +
+      "</button>" +
       "</div>" +
       "</section>";
 
+    if (state.isQuizMode) {
+      if (!state.wordRevealed) {
+        setStatus("Doan tu tieng Anh! Cham hinh de nghe goi y, roi bam Hien dap an.");
+      } else {
+        setStatus(
+          'Dap an la "' + card.word + '". Bam "The tiep ngau nhien" de choi tiep.'
+        );
+      }
+      return;
+    }
+
     if (canNext) {
-      setStatus("Cham vao hinh de nghe \"" + card.word + "\". Bam Tiep theo khi san sang.");
+      setStatus("Cham vao hinh de nghe tu tieng Anh. Bam Tiep theo khi san sang.");
     } else {
       setStatus(
         "Cham vao hinh de nghe lai. Ban da xem het " + state.cards.length + " tu."
       );
     }
+  }
+
+  function startRandomQuiz() {
+    if (!state.entries.length) {
+      setStatus("Chua co du lieu the.");
+      return;
+    }
+
+    state.isQuizMode = true;
+    state.wordRevealed = false;
+    state.selectedTopic = {
+      id: "quiz",
+      emoji: "🎲",
+      label: "Thi doi ngau nhien",
+      labelVi: "Tat ca chu de",
+    };
+    state.selectedDeck = {
+      id: "all",
+      label: "Tat ca " + state.entries.length + " the",
+    };
+    state.cards = [];
+    state.cardIndex = window.FlashcardsCore.pickRandomIndex(
+      state.entries.length,
+      -1
+    );
+    stopAudio();
+    renderPlayScreen();
   }
 
   function startDeck(topicId, deckId) {
@@ -238,13 +313,19 @@
       return;
     }
 
+    state.isQuizMode = false;
+    state.wordRevealed = false;
     state.selectedTopic = topic;
     state.selectedDeck = deck;
-    state.cards = cards;
+    state.cards = window.FlashcardsCore.shuffleEntries(cards);
     state.cardIndex = 0;
     stopAudio();
     renderPlayScreen();
-    setStatus("Cham vao hinh de nghe tu tieng Anh.");
+    setStatus(
+      "Thu tu ngau nhien. Cham hinh de nghe, roi Tiep theo cho den het " +
+        state.cards.length +
+        " the."
+    );
   }
 
   function handleScreenClick(event) {
@@ -252,7 +333,16 @@
     var deckButton = event.target.closest(".flashcard-deck-button");
     var actionButton = event.target.closest("[data-action]");
 
-    if (topicButton && state.phase === "topics") {
+    if (
+      actionButton &&
+      actionButton.dataset.action === "start-quiz" &&
+      state.phase === "topics"
+    ) {
+      startRandomQuiz();
+      return;
+    }
+
+    if (topicButton && topicButton.dataset.topicId && state.phase === "topics") {
       state.selectedTopic = state.topics.find(function (topic) {
         return topic.id === topicButton.dataset.topicId;
       });
@@ -272,8 +362,13 @@
     var action = actionButton.dataset.action;
 
     if (action === "back-topics") {
+      stopAudio();
+      state.isQuizMode = false;
+      state.wordRevealed = false;
       state.selectedTopic = null;
       state.selectedDeck = null;
+      state.cards = [];
+      state.cardIndex = 0;
       renderTopicsScreen();
       return;
     }
@@ -287,12 +382,18 @@
       return;
     }
 
-    if (state.phase !== "play") {
+    if (state.phase !== "play" && state.phase !== "quiz") {
+      return;
+    }
+
+    if (action === "reveal-word") {
+      state.wordRevealed = true;
+      renderPlayScreen();
       return;
     }
 
     if (action === "play-audio") {
-      playCardAudio(state.cards[state.cardIndex]);
+      playCardAudio(getCurrentCard());
       renderPlayScreen();
       return;
     }
@@ -300,16 +401,28 @@
     if (action === "prev") {
       stopAudio();
       state.cardIndex = window.FlashcardsCore.getPrevIndex(state.cardIndex);
+      state.wordRevealed = false;
       renderPlayScreen();
       return;
     }
 
     if (action === "next") {
+      stopAudio();
+
+      if (state.isQuizMode) {
+        state.wordRevealed = false;
+        state.cardIndex = window.FlashcardsCore.pickRandomIndex(
+          state.entries.length,
+          state.cardIndex
+        );
+        renderPlayScreen();
+        return;
+      }
+
       if (!window.FlashcardsCore.canGoNext(state.cardIndex, state.cards.length)) {
         return;
       }
 
-      stopAudio();
       state.cardIndex = window.FlashcardsCore.getNextIndex(
         state.cardIndex,
         state.cards.length

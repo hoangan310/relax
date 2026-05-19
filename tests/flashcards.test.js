@@ -12,6 +12,8 @@ const {
   canGoPrev,
   countCardsForSlugs,
   enrichTopicsWithCounts,
+  shuffleEntries,
+  pickRandomIndex,
 } = require("../docs/games/flashcards-core.js");
 const mapping = require("../docs/flashcards/mapping.json");
 
@@ -61,6 +63,26 @@ test("getCardAt returns null for out of range index", () => {
   const cards = filterCardsBySlugs(entries, ["pets-flashcards"]);
   assert.strictEqual(getCardAt(cards, 0).word, "cat");
   assert.strictEqual(getCardAt(cards, 99), null);
+});
+
+test("shuffleEntries keeps all cards as a permutation", () => {
+  const sample = entries.slice(0, 20);
+  const shuffled = shuffleEntries(sample, () => 0.5);
+  const sortWords = (list) => list.map((entry) => entry.word).sort().join(",");
+
+  assert.strictEqual(shuffled.length, sample.length);
+  assert.strictEqual(sortWords(shuffled), sortWords(sample));
+});
+
+test("pickRandomIndex avoids the current index when possible", () => {
+  var calls = 0;
+  var randomFn = function () {
+    calls += 1;
+    return calls === 1 ? 0.3 : 0.9;
+  };
+
+  assert.strictEqual(pickRandomIndex(10, 3, randomFn), 9);
+  assert.strictEqual(pickRandomIndex(1, 0, () => 0.9), 0);
 });
 
 test("enrichTopicsWithCounts adds card counts to decks", () => {

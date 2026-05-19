@@ -55,7 +55,7 @@
 - `docs/games/order-memory.html`: 3x3 board like memory, but flip tiles in order from 1 to 9
 - Flow: enter seconds -> preview shuffled `1-9` -> hide -> flip in order; wrong = red + lose, correct = green, all 9 = win
 - `docs/games/flashcards.html`: English vocabulary flashcards using `docs/flashcards/mapping.json`
-- Flow: pick topic -> pick deck -> tap image to play audio -> Previous/Next through cards
+- Flow: pick topic -> pick deck -> shuffled random order through all deck cards -> tap image to play audio -> Previous/Next; or **Thi doi ngau nhien** on topic screen for random image+audio from all entries (word hidden until reveal)
 
 ## Add A New Game
 

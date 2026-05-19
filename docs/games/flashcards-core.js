@@ -87,6 +87,48 @@
     return filterCardsBySlugs(entries, slugs).length;
   }
 
+  function shuffleEntries(entries, randomFn) {
+    var list = entries.slice();
+    var random = typeof randomFn === "function" ? randomFn : Math.random;
+    var index;
+    var swapIndex;
+    var temp;
+
+    for (index = list.length - 1; index > 0; index -= 1) {
+      swapIndex = Math.floor(random() * (index + 1));
+      temp = list[index];
+      list[index] = list[swapIndex];
+      list[swapIndex] = temp;
+    }
+
+    return list;
+  }
+
+  function pickRandomIndex(length, avoidIndex, randomFn) {
+    var random = typeof randomFn === "function" ? randomFn : Math.random;
+    var index;
+
+    if (length <= 0) {
+      return 0;
+    }
+
+    if (length === 1) {
+      return 0;
+    }
+
+    index = Math.floor(random() * length);
+
+    if (avoidIndex < 0 || avoidIndex >= length) {
+      return index;
+    }
+
+    while (index === avoidIndex) {
+      index = Math.floor(random() * length);
+    }
+
+    return index;
+  }
+
   function enrichTopicsWithCounts(topics, entries) {
     return topics.map(function (topic) {
       return {
@@ -118,6 +160,8 @@
     canGoPrev: canGoPrev,
     countCardsForSlugs: countCardsForSlugs,
     enrichTopicsWithCounts: enrichTopicsWithCounts,
+    shuffleEntries: shuffleEntries,
+    pickRandomIndex: pickRandomIndex,
   };
 
   if (typeof module !== "undefined" && module.exports) {
