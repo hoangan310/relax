@@ -216,9 +216,11 @@
       "</section>";
 
     if (canNext) {
-      setStatus("Cham hinh de nghe \"" + card.word + "\". Bam Tiep theo khi san sang.");
+      setStatus("Cham vao hinh de nghe \"" + card.word + "\". Bam Tiep theo khi san sang.");
     } else {
-      setStatus("Het the roi! Ban da xem het " + state.cards.length + " tu.");
+      setStatus(
+        "Cham vao hinh de nghe lai. Ban da xem het " + state.cards.length + " tu."
+      );
     }
   }
 
@@ -240,8 +242,9 @@
     state.selectedDeck = deck;
     state.cards = cards;
     state.cardIndex = 0;
+    stopAudio();
     renderPlayScreen();
-    playCardAudio(cards[0]);
+    setStatus("Cham vao hinh de nghe tu tieng Anh.");
   }
 
   function handleScreenClick(event) {
@@ -312,7 +315,7 @@
         state.cards.length
       );
       renderPlayScreen();
-      playCardAudio(state.cards[state.cardIndex]);
+      setStatus("Cham vao hinh de nghe tu tieng Anh.");
     }
   }
 
