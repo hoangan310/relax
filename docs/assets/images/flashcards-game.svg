@@ -1,0 +1,17 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="600" rx="40" fill="#F4F0FF"/>
+  <rect x="52" y="48" width="856" height="504" rx="34" fill="#FFFFFF"/>
+  <text x="480" y="108" text-anchor="middle" fill="#4F4671" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700">
+    English Flashcards
+  </text>
+  <rect x="300" y="160" width="360" height="280" rx="28" fill="#FFF8FC" stroke="#E0D2FF" stroke-width="10"/>
+  <circle cx="480" cy="250" r="72" fill="#FFE8F3"/>
+  <text x="480" y="270" text-anchor="middle" font-size="72">=1</text>
+  <text x="480" y="360" text-anchor="middle" fill="#493F69" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700">cat</text>
+  <circle cx="560" cy="190" r="34" fill="#8A7BFF"/>
+  <text x="560" y="202" text-anchor="middle" fill="#FFFFFF" font-size="32">=
+</text>
+  <text x="480" y="500" text-anchor="middle" fill="#6B5F8F" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">
+    Tap image · Hear English · Next card
+  </text>
+</svg>

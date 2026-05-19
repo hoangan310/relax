@@ -23,6 +23,8 @@
 - `tests/fruit-pairs.test.js`: fruit matching difficulty and deck checks
 - `tests/teddy-game.test.js`: teddy box shuffle level and guess checks
 - `tests/order-memory.test.js`: sequential 1-9 flip order checks
+- `tests/flashcards.test.js`: flashcard mapping filter and navigation checks
+- `docs/flashcards/`: flashcard images, audio, and mapping.json for English flashcards game
 - `README.md`: local run and GitHub Pages notes
 
 ## Package Manager
@@ -40,6 +42,7 @@
 | Test fruit pairs  | `node tests/fruit-pairs.test.js` |
 | Test find teddy   | `node tests/teddy-game.test.js`  |
 | Test order memory | `node tests/order-memory.test.js` |
+| Test flashcards | `node tests/flashcards.test.js` |
 
 ## Current Game
 
@@ -51,6 +54,8 @@
 - Flow: choose `easy`/`medium`/`hard` -> preview teddy in one box -> shuffle -> click the correct box
 - `docs/games/order-memory.html`: 3x3 board like memory, but flip tiles in order from 1 to 9
 - Flow: enter seconds -> preview shuffled `1-9` -> hide -> flip in order; wrong = red + lose, correct = green, all 9 = win
+- `docs/games/flashcards.html`: English vocabulary flashcards using `docs/flashcards/mapping.json`
+- Flow: pick topic -> pick deck -> tap image to play audio -> Previous/Next through cards
 
 ## Add A New Game
 

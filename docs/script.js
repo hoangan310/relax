@@ -55,6 +55,14 @@ const games = [
     image: "./assets/images/teddy-game.svg",
     cta: "Tim gau bong",
   },
+  {
+    title: "English flashcards",
+    description:
+      "Chon chu de, cham hinh de nghe tieng Anh, va dung Next de hoc tu vung bang hinh anh.",
+    href: "./games/flashcards.html",
+    image: "./assets/images/flashcards-game.svg",
+    cta: "Hoc tu vung",
+  },
 ];
 
 const gameList = document.querySelector("#game-list");

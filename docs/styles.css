@@ -777,6 +777,142 @@ input {
   font-weight: 700;
 }
 
+.flashcards-page .flashcards-app {
+  display: grid;
+  gap: 18px;
+}
+
+.flashcards-status {
+  background: #f8f4ff;
+  border-color: #e0d2ff;
+}
+
+.flashcards-screen .panel {
+  margin: 0;
+}
+
+.flashcard-screen-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.flashcard-screen-header h2 {
+  margin: 0;
+}
+
+.flashcard-back-button {
+  width: auto;
+}
+
+.flashcard-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.flashcard-topic-button,
+.flashcard-deck-button {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  width: 100%;
+  padding: 16px 18px;
+  color: #493f69;
+  text-align: left;
+  background: #fff;
+  border: 3px solid #e0d2ff;
+  border-radius: 20px;
+  box-shadow: 0 10px 18px rgba(82, 59, 125, 0.08);
+  cursor: pointer;
+  transition: transform 0.16s ease, border-color 0.16s ease;
+}
+
+.flashcard-topic-button:hover,
+.flashcard-deck-button:hover {
+  transform: translateY(-2px);
+  border-color: #8a7bff;
+}
+
+.flashcard-topic-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.flashcard-topic-button span:last-child,
+.flashcard-deck-count {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #6b5f8f;
+}
+
+.flashcard-deck-list {
+  display: grid;
+  gap: 12px;
+}
+
+.flashcard-player-panel {
+  background: linear-gradient(180deg, #fff8fc 0%, #f8f4ff 100%);
+}
+
+.flashcard-stage {
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 3px solid #e8ddff;
+}
+
+.flashcard-stage.flashcard-playing {
+  border-color: #8a7bff;
+  box-shadow: 0 0 0 4px rgba(138, 123, 255, 0.16);
+}
+
+.flashcard-image-button {
+  display: block;
+  width: min(100%, 360px);
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: transform 0.16s ease;
+}
+
+.flashcard-image-button:hover {
+  transform: scale(1.02);
+}
+
+.flashcard-image {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  border-radius: 22px;
+  background: #fff;
+}
+
+.flashcard-word {
+  margin: 0;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 800;
+  color: #493f69;
+  text-transform: capitalize;
+}
+
+.flashcard-speak-button {
+  width: auto;
+}
+
+.flashcard-nav-row {
+  margin-top: 18px;
+}
+
 @media (max-width: 820px) {
   .game-layout {
     grid-template-columns: 1fr;

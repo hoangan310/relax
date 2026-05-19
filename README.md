@@ -13,6 +13,10 @@ docs/
   styles.css
   script.js
   assets/images/
+  flashcards/
+    images/
+    audio/
+    mapping.json
   games/
 ```
 
@@ -46,6 +50,10 @@ docs/
   - Dung bo anh trai cay that de choi game tim cap hinh
   - Chon 3 muc do kho: `De` 5 cap, `Trung binh` 10 cap, `Kho` 15 cap
   - Tim het cac cap la chien thang
+- `English flashcards`
+  - Chon chu de (Animals, House, Body, Food, Nature) va bo the
+  - Cham hinh de nghe tu tieng Anh tu `docs/flashcards/audio/`
+  - Dung `Tiep theo` / `Truoc` de xem the tiep theo
 
 ## Chay local
 
@@ -69,6 +77,7 @@ node tests/sequence-game.test.js
 node tests/pairs-game.test.js
 node tests/spots-game.test.js
 node tests/fruit-pairs.test.js
+node tests/flashcards.test.js
 ```
 
 ## Them game moi
@@ -92,6 +101,7 @@ node tests/fruit-pairs.test.js
 - `docs/games/pairs.html`
 - `docs/games/spots.html`
 - `docs/games/fruit-pairs.html`
+- `docs/games/flashcards.html`
 
 ## Deploy len GitHub Pages
 
